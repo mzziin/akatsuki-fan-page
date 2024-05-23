@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Major Mono Display", monospace;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-y: scroll;
+    background-color: black;
+}
+
+/* common for all container */
+
+.base-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+/* navbar */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    margin: 0 10px;
+}
+
+.logo>a {
+    color: white;
+    font-size: 20px;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+}
+
+.child {
+    font-size: 1.1rem;
+    padding: 24px 16px;
+    margin-right: 40px;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.child:hover {
+    transition: ease-out 300ms;
+    color: rgb(0, 0, 0);
+}
+
+/* home section */
+
+#home {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.081), rgb(0, 0, 0, 0.94)), url("images/akatsuki.png");
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, );
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay>h1 {
+    font-family: "Major Mono Display", monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 4rem;
+}
+
+/* mobile view */
+@media screen and (max-width:480px) {
+    .overlay>h1 {
+        font-size: 3rem;
+        font-weight: 800;
+    }
+}
+
+/* tablet view */
+@media (min-width:481px) and (max-width:834px) {
+    /* #home {
+        background-position: center 25%;
+    } */
+
+}
+
+/* about section */
+#about-section {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+}
+
+#about {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.about-info {
+    padding-right: 5%;
+    width: 60%;
+}
+
+.about-info>p {
+    text-align: start;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-logo {
+    width: 40%;
+}
+
+.about-logo>img {
+    width: 100%;
+}
+
+#para-imp {
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: rgb(225, 0, 0);
+}
+
+/* mobile view */
+@media screen and (max-width:480px) {
+    .about-info>p {
+        line-height: 1.4;
+        font-size: 0.8rem;
+    }
+
+    #about {
+        flex-direction: column;
+        justify-content: center;
+        height: 70vh;
+    }
+
+    #about-section {
+        height: 70vh;
+    }
+
+    .about-info {
+        padding-right: 0;
+        width: 80%;
+    }
+
+    .about-logo {
+        width: 60%;
+    }
+}
+
+/* tablet view */
+@media (min-width:481px) and (max-width:834px) {
+    .about-info>p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .about-info {
+        width: 70%;
+    }
+
+    #about {
+        height: 60vh;
+    }
+
+    #about-section {
+        height: 50vh;
+    }
+
+}
+
+/* members section */
+#members {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+}
+
+#members>h1 {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-family: "Major Mono Display", monospace;
+}
+
+#members>h1:hover {
+    color: red;
+    transition: ease 300ms;
+}
+
+.grid-container {
+    margin: 5rem 5rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 10rem 10rem 10rem 10em;
+    gap: 2rem;
+}
+
+.member-card {
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* mobile view */
+@media screen and (max-width:480px) {
+    .member-card h2 {
+        font-size: 0.4rem;
+    }
+
+    .grid-container {
+        margin: 2rem 1rem;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+        gap: 1rem;
+    }
+
+    #members>h1 {
+        font-size: 1.5rem;
+        font-family: "Major Mono Display", monospace;
+    }
+
+    #nagato {
+        grid-column: initial;
+    }
+}
+
+/* tablet view */
+@media (min-width:481px) and (max-width:834px) {
+    .grid-container {
+        margin: 2.5rem 2.5rem;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 8rem 8rem 8rem 8em;
+        gap: 2rem;
+    }
+
+    #members>h1 {
+        font-size: 2rem;
+    }
+
+    .member-card h2 {
+        font-size: medium;
+    }
+
+}
+
+#kyusuke {
+    background-image: url(images/members/Kyusuke.avif);
+}
+
+#zetsu {
+    background-image: url(images/members/Zetsu.avif);
+}
+
+#juzo {
+    background-image: url(images/members/Juzo.avif);
+}
+
+#hidan {
+    background-image: url(images/members/Hidan.avif);
+}
+
+#deidara {
+    background-image: url(images/members/Deidara.avif);
+
+}
+
+#shin {
+    background-image: url(images/members/Shin-Uchiha.avif);
+}
+
+#kakuzu {
+    background-image: url(images/members/Kakuzu.avif);
+}
+
+#sasori {
+    background-image: url(images/members/Sasori-Naruto.avif);
+}
+
+#orochimaru {
+    background-image: url(images/members/Naruto-Orochimaru.avif);
+}
+
+#kisame {
+    background-image: url(images/members/Kisame.avif);
+}
+
+#konan {
+    background-image: url(images/members/Konan.avif);
+}
+
+#obito {
+    background-image: url(images/members/Obito-Uchiha.avif);
+}
+
+#itachi {
+    background-image: url(images/members/Itachi-Uchiha.avif);
+}
+
+#sasuke {
+    background-image: url(images/members/Sasuke-Uchiha.avif);
+}
+
+#nagato {
+    background-image: url(images/members/Pain-Naruto.avif);
+}
+
+.nagato {
+    grid-column: 2 / 4;
+}
+
+.member-card h2 {
+    align-items: end;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.504);
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+}
+
+/* footer section */
+#footer-section {
+    height: 20vh;
+    background-color: rgb(0, 0, 0);
+}
+
+.footer-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.social-media {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.social-media-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20%;
+}
+
+.social-media a {
+    font-size: 0.8rem;
+    color: #fff;
+    margin: 0.4rem 0.4rem;
+    text-align: start;
+}
+
+.legal-info {
+    align-content: center;
+    flex: 1;
+}
+
+.contact-info a,
+p {
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* mobile view */
+@media screen and (max-width:480px) {
+
+    .social-media a,
+    i {
+        font-size: 0.4rem;
+        margin: 0 2px;
+    }
+
+    .social-media-wrapper {
+        margin: 0;
+    }
+
+    .contact-info a,
+    p {
+        font-size: 0.4rem;
+    }
+}
+
+/* tablet view */
+@media (min-width:480px) and (max-width:834px) {
+
+    .social-media a,
+    i {
+        font-size: 0.6rem;
+    }
+
+    .contact-info a,
+    p {
+        font-size: 0.6rem;
+    }
+}
+
+/*common mobile view*/
+@media (max-width:480px) {
+
+    .nav-container {
+        visibility: hidden;
+    }
+}
+
+/*common tablet view*/
+/* @media screen and (max-width:834px) {
+    
+} */
